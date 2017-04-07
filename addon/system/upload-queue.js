@@ -78,6 +78,7 @@ export default Ember.ArrayProxy.extend({
 
   runtimeDidChange() {
     let $input = get(this, 'target').$('.moxie-shim input');
+    if (!$input) { return; }
     let ruid = $input.attr('id');
     let I = mOxie.Runtime.getInfo(ruid);
 
